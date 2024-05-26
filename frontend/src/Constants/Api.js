@@ -1,4 +1,4 @@
-export const host = `http://localhost:8000`;
+export const host = `https://to-do-list-7uqy.onrender.com`;
 export const retrieveAllTask = `${host}/api/tasks`;
 export const singleRetreive = `${host}api/tasks/`;
 export const createTask = `${host}/api/tasks`;

@@ -20,6 +20,7 @@ const createTask = asyncHandler(async (req, res) => {
 })
 
 const updateTask = asyncHandler(async (req, res) => {
+  console.log("UpdateTask API Called");
   const taskId = req.params.id;
   const { title, description, status, dueDate } = req.body;
   const updatedTask = await Task.findByIdAndUpdate(taskId, { title, description, status, dueDate }, { new: true });
@@ -36,6 +37,7 @@ const updateTask = asyncHandler(async (req, res) => {
 })
 
 const deleteTask = asyncHandler(async (req, res) => {
+  console.log("deleteTask API Called");
   const taskId = req.params.id;
   const deletedTask = await Task.findByIdAndDelete(taskId);
   if (!deleteTask) {
@@ -50,6 +52,7 @@ const deleteTask = asyncHandler(async (req, res) => {
 })
 
 const retreiveAllTasks = asyncHandler(async (req, res) => {
+  console.log("retreiveAllTasks API Called");
   const allTasks = await Task.find();
   return res.status(200).json(
     new ApiResponse(
@@ -60,6 +63,7 @@ const retreiveAllTasks = asyncHandler(async (req, res) => {
 })
 
 const retreiveSingleTask = asyncHandler(async (req, res) => {
+  console.log("retreiveSingleTask API Called");
   const taskId = req.params.id;
   const singleTask = await Task.findById(taskId);
   if (!singleTask) {
